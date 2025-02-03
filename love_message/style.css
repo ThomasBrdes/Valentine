@@ -1,5 +1,5 @@
 body {
-    background-image: url('assets/background.jpg');
+    background-image: url('/assets/background.jpg');
     background-size: 1550px;
     background-position: center center;
     overflow-x: hidden;
@@ -18,7 +18,7 @@ body {
     border: 2px solid black;
     position: absolute;
     cursor: grab;
-    background-image: url('assets/paper.jpg');
+    background-image: url('/assets/paper.jpg');
     background-size: 700px;
     padding: 20px 100px;
     transform: rotateZ(-5deg);
