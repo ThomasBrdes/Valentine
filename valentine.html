@@ -26,12 +26,62 @@
         transform: translateY(-10px);
       }
     }
+    .highlight:hover {
+      transform: scale(1.1);
+      transition: transform 0.3s ease-in-out;
+      box-shadow: 0px 0px 15px rgba(189, 30, 89, 0.5);
+    }
+    .love-caption {
+      position: absolute;
+      background-color: rgba(255, 208, 229, 0.9);
+      color: #bd1e59;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-weight: bold;
+      display: none;
+      transition: opacity 0.3s ease-in-out;
+    }
+    .gif-container {
+      position: relative;
+      display: inline-block;
+      justify-content: center;
+      align-items: center;
+    }
+    .gif-container:hover .love-caption {
+      display: block;
+    }
+    .bottom-container {
+      justify-content: center;
+      margin-top: 50px;
+      position: relative;
+      display: inline-block;
+    }
+    .redirect-image {
+      width: 200px;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+    .redirect-image:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 0px 15px rgba(255, 105, 180, 0.6);
+    }
   </style>
 </head>
 <body class="gradient-background">
+
+  <script>
+    let audio = new Audio("music/Marry_You.mp3");
+    audio.loop = true;
+    audio.volume = 0.5;
+    
+    function playMusic() {
+        audio.play();
+    }
+  </script>
+
   <div class="flex items-center justify-center h-screen">
-    <div class="flex flex-col items-center p-4">
-      <img id="imageDisplay" src="./images/image1.gif" alt="Cute kitten with flowers" class="rounded-md h-[300px]" style="object-fit: cover;" />
+    <div class="flex flex-col items-center p-4" onclick="playMusic()">
+      <img id="imageDisplay" src="./images/image1.gif" alt="Cute kitten with flowers" class="h-[300px] cursor-pointer rounded-md highlight" style="object-fit: cover;" />
       <h2 id="valentineQuestion" class="text-4xl font-bold italic text-[#bd1e59] my-4">Will you be my Valentine?</h2>
       <div class="flex gap-4 pt-[20px] items-center" id="responseButtons">
         <button id="yesButton"

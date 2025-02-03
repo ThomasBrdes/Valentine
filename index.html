@@ -50,14 +50,46 @@
   </style>
 </head>
 <body class="gradient-background">
+  <script>
+    let audio2 = new Audio("./music/just_the_way_you_are.mp3");
+    let audio1 = new Audio("./music/Neon_Trees.mp3");
+    audio.loop = true;
+    audio.volume = 0.5;
+    
+    function playMusic1() {
+        if (!audio1.paused) {
+            audio1.pause();
+            audio1.currentTime = 0;
+        }
+        if (!audio2.paused) {
+            audio2.pause();
+            audio2.currentTime = 0;
+        }
+        audio1.play();
+    }
+
+    function playMusic2() {
+        if (!audio1.paused) {
+            audio1.pause();
+            audio1.currentTime = 0;
+        }
+        if (!audio2.paused) {
+            audio2.pause();
+            audio2.currentTime = 0;
+        }
+        audio2.play();
+    }
+  </script>
+  
   <div class="flex flex-col items-center justify-center h-screen text-center p-4">
     <h1 class="text-4xl font-bold text-[#bd1e59] mb-4">That could be us on February 14th ❤️</h1>
     <div class="flex gap-6">
-      <div class="gif-container">
+
+      <div class="gif-container" onclick="playMusic1()">
         <img src="./images/love1.gif" alt="Gif 1" class="h-[300px] cursor-pointer rounded-md highlight">
         <div class="love-caption">"Princess Andi, future ruler of the seven kingdoms"</div>
       </div>
-      <div class="gif-container">
+      <div class="gif-container" onclick="playMusic2()">
         <img src="./images/love2.gif" alt="Gif 2" class="h-[300px] cursor-pointer rounded-md highlight">
         <div class="love-caption">"Sir Thomas, first knight of its majesty"</div>
       </div>
@@ -65,7 +97,7 @@
     <div style="height:100px"></div> 
     <div class="gif-container">
       <img src="./images/regime.gif" alt="Click to Proceed" class="h-[150px] cursor-pointer rounded-md highlight" onclick="redirectToValentine()">
-      <div class="love-caption" href=>"Click here ma bibiche ❤️"</div>
+      <div class="love-caption">🐰 Life’s short, let’s be silly together. 🦫</div>
     </div>
   </div>
 

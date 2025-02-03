@@ -10,18 +10,63 @@
     <link href="https://fonts.googleapis.com/css2?family=Zeyada&display=swap" rel="stylesheet">
     <link rel="icon" href="./assets/heart-svgrepo-com.svg">
     <style>
-        .redirect-image {
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-        }
-        .redirect-image:hover {
-            transform: scale(1.1);
-            box-shadow: 0px 0px 15px rgba(255, 105, 180, 0.6);
-        }
+    .gradient-background {
+      background: rgb(255, 208, 229);
+      background: linear-gradient(180deg, rgba(255, 208, 229, 1) 0%, rgba(255, 232, 242, 1) 36%, rgba(255, 255, 255, 1) 100%);
+    }
+    .highlight:hover {
+      transform: scale(1.1);
+      transition: transform 0.3s ease-in-out;
+      box-shadow: 0px 0px 15px rgba(189, 30, 89, 0.5);
+    }
+    .love-caption {
+      position: absolute;
+      background-color: rgba(255, 208, 229, 0.9);
+      color: #bd1e59;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-weight: bold;
+      display: none;
+      transition: opacity 0.3s ease-in-out;
+    }
+    .gif-container {
+      position: relative;
+      display: inline-block;
+      justify-content: center;
+      align-items: center;
+    }
+    .gif-container:hover .love-caption {
+      display: block;
+    }
+    .bottom-container {
+      justify-content: center;
+      margin-top: 50px;
+      position: relative;
+      display: inline-block;
+    }
+    .redirect-image {
+      width: 200px;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+    .redirect-image:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 0px 15px rgba(255, 105, 180, 0.6);
+    }
     </style>
 </head>
 <body>
+    <script>
+        let audio = new Audio("../music/Tahiti.mp3");
+        audio.loop = true;
+        audio.volume = 0.5;
+        
+        function playMusic() {
+            audio.play();
+        }
+      </script>
     <div class="main">
-        <div class="paper paper1">
+        <div class="paper paper1" class="h-[150px] cursor-pointer rounded-md highlight"onclick="playMusic()">
             <img src="./assets/heart-svgrepo-com.svg" alt="Heart">
         </div>
         <div class="paper paper5">
@@ -44,12 +89,18 @@
         <div class="paper paper10">
             <img src="./assets/image5.jpg" alt="Andi, I Love U">
         </div>
-        <div>
-            <a href="../valentine.html">
-                <img src="./assets/back-to-home.gif" alt="Go Back to Main Page" class="redirect-image" style="width:300px">
-            </a>
+        <div class="gif-container" >
+            <img width="100%" src="./assets/back-to-home.gif" alt="Go Back to Main Page"  class="h-[200px] cursor-pointer rounded-md highlight" onclick="redirectToValentine()">
+            <div class="love-caption">🏝️ Un jour j'irai à Tahiti, c'est là qu'j'vivrai ma meilleure vie 🏝️</div>
         </div>
     </div>
+
+    <script>
+        function redirectToValentine() {
+          window.location.href = "../valentine.html";
+        }
+      </script>
+
     <script src="script.js"></script>
 </body>
 </html>
